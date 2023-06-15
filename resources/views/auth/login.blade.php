@@ -18,25 +18,24 @@
                     </a>
                 </div>
                 <div class="box_link">
-                    <a href="" class="nav_link">
+                    <a href="#" class="nav_link">
                         <p class="nav_text">Iniciar sesión</p>
                     </a>
                 </div>
                 <div class="box_link">
-                    <a href="" class="nav_link">
+                    <a href="{{ route('register') }}" class="nav_link">
                         <p class="nav_text">Registrarse</p>
                     </a>
                 </div>
             </div>
         </div>
-{{-- <x-guest-layout> --}}
     <div style=" height: 100vh" class="d-flex justify-content-center align-items-center"><!--sección principal-->
         <div class="d-flex" style="height: 80%;width: 70%; background-color: aliceblue;">
             <div class="col-6 card box_main_img"><!--sección imagen-->
                 <img src="images/nave_espacial_login.jpg" alt="" width="100%" height="100%">
                 <div class="card-img-overlay d-flex align-items-start flex-column bd-highlight mb-3 ">
                     <div class="p-2  d-flex flex-column justify-content-center" style="width: 100%; height: 50%;">
-                        <!--Texto superiore-->
+                        <!--Texto superior-->
                         <div class="d-flex align-items-center justify-content-center" style="height: 50%;">
                             <p class="text-white " style="font-size: 35px;text-align: center;">Estás a punto de
                                 conocer SPACES QUIZ</p>
@@ -88,25 +87,27 @@
             <div style="padding: 16px 0px 16px 0px;">
                 <label for="remember_me" class="flex items-center">
                     <input type="checkbox" id="remember_me" name="remember">
-                    {{-- <checkbox id="remember_me" name="remember"> --}}
                     <span>Recuérdame</span>
                 </label>
             </div>
 
-            <div class="">
-                @if (Route::has('password.request'))
+            <div class="d-flex align-items-end justify-content-center" style="height: 20%;">
+                {{-- @if (Route::has('password.request'))
                     <a href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
-                @endif
-
+                @endif --}}
                 <button class="btn btn-outline-secondary btn-lg"  style="color: blueviolet">
-                    {{ __('Log in') }}
+                    {{ __('Ingresar') }}
                 </button>
             </div>
+            <br>
+            <div class="d-flex align-items-end justify-content-center" style="height: 20%;"> <!--Form iniciar sesion texto inferior, si no tienes cuenta-->
+                <p class="d-flex " style="display: flex;">Si no tienes cuenta,<a
+                        href="registro_tipo.html">Registrate</a> </p>
+            </div>
         </form>
+    </div>
     </authentication-card>
-{{-- </x-guest-layout> --}}
-
 </body>
 @stop

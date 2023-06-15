@@ -18,12 +18,12 @@
                     </a>
                 </div>
                 <div class="box_link">
-                    <a href="" class="nav_link">
+                    <a href="{{ route('login') }}" class="nav_link">
                         <p class="nav_text">Iniciar sesión</p>
                     </a>
                 </div>
                 <div class="box_link">
-                    <a href="" class="nav_link">
+                    <a href="#" class="nav_link">
                         <p class="nav_text">Registrarse</p>
                     </a>
                 </div>
@@ -44,31 +44,31 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="double_col box_input">
-                <label for="name" value="Name">Name</label>
+                <label for="name" value="Name">Nombre</label>
                 <input id="name" class="registro_input" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
-            <div class="mt-4 double_col box_input">
-                <label for="lastname" value="Lastname">Lastname</label>
+            <div class="double_col box_input">
+                <label for="lastname" value="Lastname">Apellido</label>
                 <input id="lastname" class="registro_input" type="text" name="lastname" :value="old('lastname')" required autocomplete="username" />
             </div>
 
-            <div class="mt-4 double_col box_input">
-                <label for="username" value="Username">Username</label>
+            <div class="double_col box_input">
+                <label for="username" value="Username">Nombre de usuario</label>
                 <input id="username" class="registro_input" type="text" name="username" :value="old('username')" required autocomplete="username" />
             </div>
 
-            <div class="mt-4 double_col box_input">
-                <label for="email" value="Email">Email</label>
+            <div class="double_col box_input">
+                <label for="email" value="Email">Correo</label>
                 <input id="email" class="registro_input" type="email" name="email" :value="old('email')" required autocomplete="username" />
             </div>
-            <div class="mt-4 double_col box_input">
-                <label for="password" value="Password">Password</label>
+            <div class="single_col box_input">
+                <label for="password" value="Password">Contraseña</label>
                 <input id="password" class="registro_input" type="password" name="password" required autocomplete="new-password" />
             </div>
 
-            <div class="mt-4 double_col box_input">
-                <label for="password_confirmation" value="Confirm password">Confirm password</label>
+            <div class="single_col box_input">
+                <label for="password_confirmation" value="Confirm password">Confirmar contraseña</label>
                 <input id="password_confirmation" class="registro_input" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
@@ -88,35 +88,43 @@
                     </x-label>
                 </div>
             @endif
-
+                <br>
             <div>
-                <div class="d-flex justify-content-center" style="padding-top: 50px;">
-                    <a href="{{ route('login') }}" class="d-flex " style="display: flex;">
-                    {{ __('Tienes una cuenta?') }}
-                    </a>
-                </div>
                 <div class="d-flex justify-content-center" style="padding-top: 10px;">
                     <button class="ml-4 btn btn-outline-secondary btn-lg" style="color: rgb(0, 0, 0)">
-                        {{ __('Registrar') }}
+                        {{ __('Registrarme') }}
                     </button>
                 </div>
+                <div class="d-flex justify-content-center" style="padding-top: 50px;">
+                    <p>¿Tienes una cuenta?</p>
+                    <a href="{{ route('login') }}" class="d-flex " style="display: flex;">
+                    {{ __('Inicia sesión') }}
+                    </a>
+                </div>
+                
             </div>
         </form>
 {{-- Inicio Texto extra --}}
-                <div class="col-lg-6 card box_main_img d-flex justify-content-center align-items-center box_main_form" style="background-color: aqua;"> <!--seccion imagen-->
-                        <img src="/images/nave_espacial_login.jpg" alt="dibujo digital de nave espacial" width="100%" height="100%">
-                        <div class="card-img-overlay d-flex align-items-start flex-column bd-highlight mb-3 ">
-                            <div class="p-2  d-flex flex-column justify-content-center" style="width: 100%; height: 50%;">
-                                <!--Texto superiore-->
-                                <div class="d-flex align-items-center justify-content-center" style="height: 50%;">
-                                    <p class="text-white " style="font-size: 35px;text-align: center;">Estás a punto de conocer SPACES QUIZ</p>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+                
 {{-- Fin texto extra --}}
             </div>
         </div>
+        <div class="col-lg-6 card box_main_img d-flex justify-content-center align-items-center box_main_form" style="background-color: aqua;"> <!--seccion imagen-->
+            <img src="/images/nave_espacial_login.jpg" alt="dibujo digital de nave espacial" width="100%" height="100%">
+            <div class="card-img-overlay d-flex align-items-start flex-column bd-highlight mb-3 ">
+                <div class="p-2  d-flex flex-column justify-content-center" style="width: 100%; height: 50%;">
+                    <!--Texto superiore-->
+                    <div class="d-flex align-items-center justify-content-center" style="height: 50%;">
+                        <p class="text-white " style="font-size: 35px;text-align: center;">Estás a punto de conocer SPACES QUIZ</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+
+
+
     </div>
 </div>
     {{-- </authentication-card> --}}
